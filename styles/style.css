@@ -19,6 +19,8 @@ body {
     align-items: center;
 }
 
+/* App */
+
 main {
     width: 90%;
     height: 90%;
@@ -26,9 +28,10 @@ main {
     background-color: white;
     border-radius: 15px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    position: relative;
 }
 
-
+/* Header */  
 .header  {
     width: 100%;
     height: 100px;
@@ -40,13 +43,14 @@ main {
     position: relative;
 }
 
+/* Header Tittle */
 .header > h2 {
     font-size: 2rem;
     color: #fff;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.23);
 }
 
-
+/* Header: Add new book button */
 .add-book {
     position: absolute;
     right: 0;
@@ -60,6 +64,7 @@ main {
 }
 
 
+/* Boook card */
 .book-card {
     width: 33%;
     height: 250px;
@@ -69,15 +74,36 @@ main {
     flex-flow: column;
     align-items: center;
     justify-content: space-between;
+    border: 2px solid #0592FF;
+    border-radius: 15px;
+}
+
+
+.book-card h3 {
+    text-align: center;
+    width: 12ch;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box; 
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    font-size: 1.8rem;
 }
 
 .book-card p {
-    font-size: 1.2rem
+    text-align: center;
+    font-size: 1.2rem;
+    width: 16ch;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .check-book {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 4px;
 }
 
@@ -88,11 +114,41 @@ main {
 }
 
 
-.book-card h3 {
-    font-size: 1.8rem;
+.remove-book {
+    background-color: var(--blue-1000);
+    outline: none;
+    border: 1px solid white;
+    color: white;
+    border-radius: 5px;
+    padding: 0.3em  1.5em 0.5em 1.5em ;
 }
 
-.remove-book {
+
+/* Form for submit a new book */
+form {
+    width: 33%;
+    height: 250px;
+    background-color: var(--blue-100);
+    padding: 1em;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: space-between;
+    border: 2px solid #0592FF;
+    border-radius: 15px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#read-form > label {
+    position: relative;
+    top: -1px;
+    font-size: 1.1rem;
+}
+
+.submit-form input {
     background-color: var(--blue-1000);
     outline: none;
     border: 1px solid white;

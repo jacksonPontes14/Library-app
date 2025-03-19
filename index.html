@@ -8,23 +8,78 @@
     <link rel="stylesheet" href="styles/resetcss.css">
 </head>
 <body>
+
+     <!-- App -->
     <main class="library-app">
+         <!-- Header -->
         <section class="header">
             <h2>My library</h2>
             <button class="add-book">&plus; Add Book</button>
         </section>
+
+         <!-- Card section -->
         <section class="books">
+
+             <!-- Card -->
             <div class="book-card">
-                <h3 class="tittle">Book tittle</h3>
-                <p class="author">Author:</p>
-                <p class="pages">Pages:</p>
+                 <!-- Tittle -->
+                <h3 class="tittle">Harry Potter: Pedra filosofal</h3>
+
+                 <!-- Author -->
+                <p class="author">Author: J. J. R Tolkien</p>
+
+                 <!-- Pages -->
+                <p class="pages">Pages: 433</p>
+
+                 <!-- Read -->
                 <p class="check-book">
-                    <input type="checkbox" name="read" id="read"><label for="read">read</label></p>
-                <button class="remove-book">remove</button>
+                    <input type="checkbox" name="read" id="read">
+                    <label for="read">read</label>
+                </p>
+
+                 <!-- Remove button -->
+                <button class="remove-book">
+                    remove
+                </button>
                 
             </div>
+
+            <!-- Form for add new book info  -->
+
+            <form method="post" class="new-book-form">
+            <!-- Tittle -->
+                <div class="tittle-form">
+                    <label for="tittle-input">Tittle</label>
+                    <input type="text" name="tittle-input" id="tittle-input">
+                </div>
+
+                 <!-- Author -->
+                <div class="author-form">
+                    <label for="author-input">Author</label>
+                    <input type="text" name="author-input" id="author-input">
+                </div>
+
+                 <!-- Pages -->
+                <div class="pages-form">
+                    <label for="pages-input">Pages</label>
+                    <input type="number" name="tittle-input" id="tittle-input">
+                </div>
+
+                 <!-- Read? -->
+                <div id="read-form">
+                    <input type="checkbox" name="read-check" id="read-check">
+                    <label for="read-check">Read</label>
+                </div>
+
+                 <!-- Submit -->
+                <div class="submit-form">
+                    <input type="submit" id="submit-btn" value="Submit">
+                </div>
+            
+            </form>
         </section>
+        <script src="main.js"></script>
     </main>
-    <script src="main.js"></script>
+    
 </body>
 </html>
