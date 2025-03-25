@@ -66,8 +66,7 @@ main {
 
 /* Boook card */
 .book-card {
-    width: 33%;
-    height: 250px;
+    box-sizing: border-box;
     background-color: var(--blue-100);
     padding: 1em;
     display: flex;
@@ -123,8 +122,24 @@ main {
     padding: 0.3em  1.5em 0.5em 1.5em ;
 }
 
+.books {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, calc((100% - 20px) / 3)); 
+    max-width: 100%;
+    padding: 10px;
+    gap: 10px;
+
+    justify-items: center; /* Centraliza os itens no grid */
+    align-items: stretch;
+}
+
 
 /* Form for submit a new book */
+.new-book-form {
+   display: none;
+}
+
 form {
     width: 33%;
     height: 250px;
