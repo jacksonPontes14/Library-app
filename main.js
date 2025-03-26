@@ -1,6 +1,9 @@
 // App dom
 let addNewBook = document.querySelector(".add-book"); //NewBook button
 
+//header
+let header = document.querySelector(".header")
+
 //Cards container
 let bookShelf = document.querySelector(".books")
 
@@ -74,7 +77,7 @@ newBookForm.addEventListener("submit", (e)=> {
         <p class="pages">Pages: ${pagesValue}</p>
 
         <p class="check-book">
-            <input type="checkbox" name="read" id="read" ${pagesValue ? "checked" : ""}>
+            <input type="checkbox" name="read" class="read" ${checkValue ? "checked" : ""}>
             <label for="read">Read</label>
         </p>
         
@@ -84,14 +87,32 @@ newBookForm.addEventListener("submit", (e)=> {
 
     bookShelf.appendChild(bookOnTheShelf);
 
+    header.classList.remove("blur");
+    bookShelf.classList.remove("blur");
+
     addBookToLibrary(titleValue, authorValue, pagesValue, checkValue);
 
     newBookForm.style.display = "none";
 });
 
+function removeBook(id) {
+    const bookToRemove = document.getElementById(id);
+    if (bookToRemove) {
+        bookShelf.removeChild(bookToRemove);
+    }
+
+    const bookIndex = mylibrary.findIndex(book => book.bookInfo.id === id);
+    if (bookIndex !== -1) {
+        mylibrary.splice(bookIndex, 1);
+    }
+}
 
 addNewBook.addEventListener("click", ()=>{
     newBookForm.style.display = "block";
+
+    header.classList.add("blur");
+    bookShelf.classList.add("blur");
+
     newBookTitle.value = '';
     newBookAuthor.value = '';
     newBookPages.value = '';
